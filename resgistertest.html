@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Form</title>
+</head>
+<body>
+    
+    <form action="registertest2.html">
+        <div class="form">
+            <h1>Register Form</h1>
+            <div><label>Name :&nbsp; <input id="name" type="text" placeholder="Name"></label></div><br>
+            <div><label>Mobile no: <input id="mobile" type="number" placeholder="Number"></label></div><br>
+            <div><label>Course : <input id="course" type="text" placeholder="Course"></label><br><br></div><br>
+            <button class="Register">Register</button>
+            <button type="reset">Reset</button>
+        </div>
+    </form>
+    <script>
+        let Rgs=document.querySelector(".Register")
+        let name=document.querySelector("#name")
+        let mobile=document.querySelector("#mobile")
+        let course=document.querySelector("#course")
+    
+        Rgs.addEventListener("click",()=>{
+            localStorage.setItem("name",name.value)
+            localStorage.setItem("mobile",mobile.value)
+            localStorage.setItem("course",course.value)
+        }) 
+    </script>
+</body>
+</html>

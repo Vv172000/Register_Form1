@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+
+    <div><h1 class="rgs">Registration successfully</h1></div>
+    <div>Your name is -<span class="name"></span></div>
+    <div>Your mobile number is -<span class="mobile"></span></div>
+    <div>Your course is -<span class="course"></span></div><br>
+    <button class="clear">Clear</button>
+    <a href="registertest.html"><button>Register</button></a>
+    <script>
+        let rgs=document.querySelector(".rgs")
+        let name=document.querySelector(".name")
+        let mobile=document.querySelector(".mobile")
+        let course=document.querySelector(".course")
+        let clear=document.querySelector(".clear")
+        let sname=localStorage.getItem("name")
+        let smobile=localStorage.getItem("mobile")
+        let scourse=localStorage.getItem("course")
+        name.innerHTML=sname;
+        mobile.innerHTML=smobile;
+        course.innerHTML=scourse;
+        clear.addEventListener("click", ()=> {
+            localStorage.clear()
+            name.innerHTML=""
+            mobile.innerHTML=""
+            course.innerHTML=""
+            rgs.innerHTML="Registration is empty"
+        })
+    </script>
+</body>
+</html>
